@@ -1,4 +1,4 @@
-# Go API Server for jabali_sdk
+# Go API Server for jabaliSDK
 
 API Proposal for Jabali.
 
@@ -13,7 +13,7 @@ To see how to make this your own, look here:
 [README](https://openapi-generator.tech)
 
 - API version: 0.0.1
-- Build date: 2024-06-22T13:11:03.643384-07:00[America/Los_Angeles]
+- Build date: 2024-06-22T13:19:28.049789-07:00[America/Los_Angeles]
 - Generator version: 7.6.0
 
 ### Running the server
@@ -26,12 +26,12 @@ go run main.go
 
 To run the server in a docker container
 ```
-docker build --network=host -t jabali_sdk .
+docker build --network=host -t jabaliSDK .
 ```
 
 Once the image is built, just run
 ```
-docker run --rm -it jabali_sdk
+docker run --rm -it jabaliSDK
 ```
 
 ### Known Issue

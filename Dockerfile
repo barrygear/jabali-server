@@ -7,10 +7,10 @@ COPY go.mod .
 
 ENV CGO_ENABLED=0
 
-RUN go build -o jabali_sdk .
+RUN go build -o jabaliSDK .
 
 FROM scratch AS runtime
 ENV GIN_MODE=release
-COPY --from=build /go/src/jabali_sdk ./
+COPY --from=build /go/src/jabaliSDK ./
 EXPOSE 8080/tcp
-ENTRYPOINT ["./jabali_sdk"]
+ENTRYPOINT ["./jabaliSDK"]
