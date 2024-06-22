@@ -15,7 +15,7 @@ import (
 	// WARNING!
 	// Pass --git-repo-id and --git-user-id properties when generating the code
 	//
-	sw "github.com/barrygear/jabali/go"
+	sw "github.com/barrygear/jabali-sdk/go"
 )
 
 func main() {
