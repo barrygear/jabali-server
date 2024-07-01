@@ -10,7 +10,10 @@
 package jabaliSDK
 
 import (
+	"net/http"
+
 	"github.com/gin-gonic/gin"
+	"github.com/google/uuid"
 )
 
 type JabaliAPI struct {
@@ -23,37 +26,42 @@ func (api *JabaliAPI) CheckHealth(c *gin.Context) {
 }
 
 // Post /game
-// Create a new Game 
+// Create a new Game
 func (api *JabaliAPI) CreateGame(c *gin.Context) {
 	// Your handler implementation
 	c.JSON(200, gin.H{"status": "OK"})
 }
 
 // Delete /game/:gameId
-// Delete a game 
+// Delete a game
 func (api *JabaliAPI) DeleteGame(c *gin.Context) {
 	// Your handler implementation
 	c.JSON(200, gin.H{"status": "OK"})
 }
 
 // Get /game/:gameId
-// Get a Game 
+// Get a Game
 func (api *JabaliAPI) GetGame(c *gin.Context) {
 	// Your handler implementation
 	c.JSON(200, gin.H{"status": "OK"})
 }
 
 // Get /games
-// List Games 
+// List Games
 func (api *JabaliAPI) ListGames(c *gin.Context) {
 	// Your handler implementation
-	c.JSON(200, gin.H{"status": "OK"})
+	id := uuid.New()
+	games := []Game{
+		{DisplayName: "One", Name: "The Big One", Url: "https://google.com"},
+	}
+	games[0].GameId = id.String()
+	c.IndentedJSON(http.StatusOK, games)
+	//c.JSON(200, gin.H{"status": "OK"})
 }
 
 // Put /game/:gameId
-// Update a game 
+// Update a game
 func (api *JabaliAPI) UpdateGame(c *gin.Context) {
 	// Your handler implementation
 	c.JSON(200, gin.H{"status": "OK"})
 }
-
